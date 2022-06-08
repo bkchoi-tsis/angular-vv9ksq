@@ -1,0 +1,75 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Full name</mat-label>
+              <input 
+                matInput 
+                formControlName="fullName"
+                placeholder="Enter your full name"
+                >
+              <mat-hint>Full name</mat-hint>
+              <mat-error *ngIf="f['fullName'].invalid">{{getErrorMessage('fullName')}}</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Username</mat-label>
+              <input 
+                matInput 
+                formControlName="userName"
+                placeholder="Enter your user name"
+                >
+              <mat-hint>username</mat-hint>
+              <mat-error *ngIf="f['userName'].invalid">{{getErrorMessage('userName')}}</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Email</mat-label>
+              <input 
+                matInput 
+                formControlName="email"
+                placeholder="Enter your email"
+                >
+              <mat-hint>email address</mat-hint>
+              <mat-error *ngIf="f['email'].invalid">{{getErrorMessage('email')}}</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Password</mat-label>
+              <input 
+                matInput 
+                formControlName="password"
+                placeholder="Enter your password"
+                >
+              <mat-hint>password</mat-hint>
+              <mat-error *ngIf="f['password'].invalid">{{getErrorMessage('password')}}</mat-error>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="standard">
+              <mat-label>Confirm Password</mat-label>
+              <input 
+                matInput 
+                formControlName="confirmPassword"
+                placeholder="Confirm your password"
+                >
+              <mat-hint>confirm password</mat-hint>
+              <mat-error *ngIf="f['confirmPassword'].invalid">{{getErrorMessage('confirmPassword')}}</mat-error>
+            </mat-form-field>
+        </p>
+        <div align="end">
+            <button mat-flat-button (click)="onNoClick()">Cancel</button>
+            <button 
+                mat-flat-button 
+                type="submit"
+                [mat-dialog-close]="" 
+                cdkFocusInitial 
+                [disabled]="!form.valid"
+                color="primary" >Submit</button>
+        </div>
+    </form>
+    
+</div>
