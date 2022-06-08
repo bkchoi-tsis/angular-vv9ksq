@@ -1,6 +1,6 @@
-<mat-sidenav-container class='app-drawer-container' fullscreen>
+<!-- <mat-sidenav-container class='app-drawer-container' fullscreen> -->
     <!-- <mat-sidenav #sidenav mode="over" [opened] ="isShowing" > -->
-    <mat-sidenav #sidenav mode="over">
+    <!-- <mat-sidenav #sidenav mode="over">
       <mat-selection-list #sidemenu [multiple]="false">
         <mat-list-option *ngFor="let menu of menuList">
           {{menu}}
@@ -16,4 +16,8 @@
     <mat-sidenav-content>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
-  </mat-sidenav-container>
+  </mat-sidenav-container> -->
+
+  <mat-list-option *ngFor="let menu of menuList">
+    {{menu}}
+  </mat-list-option>
